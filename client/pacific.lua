@@ -48,7 +48,7 @@ RegisterNetEvent('qb-bankrobbery:UseBankcardB', function()
                         Config.DoorlockAction(1, false)
                         TriggerServerEvent('qb-bankrobbery:server:removeBankCard', '02')
                         if copsCalled or not Config.BigBanks["pacific"]["alarm"] then return end
-                        TriggerServerEvent("qb-bankrobbery:server:callCops", "pacific", 0, pos)
+                        local camId = Config.BigBanks["pacific"]["camId"] exports['ps-dispatch']:PacificBankRobbery(camId)
                         copsCalled = true
                     end, function() -- Cancel
                         StopAnimTask(ped, "anim@gangops@facility@servers@", "hotwire", 1.0)
@@ -90,7 +90,7 @@ RegisterNetEvent('electronickit:UseElectronickit', function()
                             TriggerEvent("mhacking:show")
                             TriggerEvent("mhacking:start", math.random(5, 9), math.random(10, 15), OnHackPacificDone)
                             if copsCalled or not Config.BigBanks["pacific"]["alarm"] then return end
-                            TriggerServerEvent("qb-bankrobbery:server:callCops", "pacific", 0, pos)
+                            local camId = Config.BigBanks["pacific"]["camId"] exports['ps-dispatch']:PacificBankRobbery(camId)
                             copsCalled = true
                         end, function() -- Cancel
                             StopAnimTask(ped, "anim@gangops@facility@servers@", "hotwire", 1.0)
