@@ -186,8 +186,8 @@ RegisterNetEvent('qb-bankrobbery:server:recieveItem', function(type, bankId, loc
                     local info = {
                         worth = math.random(2300, 3200)
                     }
-                    ply.Functions.AddItem('blackmoney', math.random(2300,3200), false, info)
-                    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['blackmoney'], "add")
+                    ply.Functions.AddItem('markedbills', math.random(2,3), false, info)
+                    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], "add")
                 end
             else
                 ply.Functions.AddItem('security_card_01', 1)
@@ -218,8 +218,8 @@ RegisterNetEvent('qb-bankrobbery:server:recieveItem', function(type, bankId, loc
                     local info = {
                         worth = math.random(4000, 6000)
                     }
-                    ply.Functions.AddItem('blackmoney', math.random(4000,6000), false, info)
-                    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['blackmoney'], "add")
+                    ply.Functions.AddItem('markedbills', math.random(1,4), false, info)
+                    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], "add")
                  end
             else
                 ply.Functions.AddItem('security_card_02', 1)
@@ -253,15 +253,15 @@ RegisterNetEvent('qb-bankrobbery:server:recieveItem', function(type, bankId, loc
                     local info = {
                         worth = math.random(19000, 21000)
                     }
-                    ply.Functions.AddItem('blackmoney', math.random(19000,21000), false, info)
-                    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['blackmoney'], "add")
+                    ply.Functions.AddItem('markedbills', math.random(1,4), false, info)
+                    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], "add")
                 end
             else
                 local info = {
                     worth = math.random(19000, 21000)
                 }
-                ply.Functions.AddItem('blackmoney', math.random(19000,21000), false, info)
-                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['blackmoney'], "add")
+                ply.Functions.AddItem('markedbills', math.random(1,4), false, info)
+                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], "add")
                 info = {
                     crypto = math.random(1, 3)
                 }
