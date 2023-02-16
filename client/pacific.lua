@@ -48,7 +48,7 @@ RegisterNetEvent('qb-bankrobbery:UseBankcardB', function()
                         Config.DoorlockAction(1, false)
                         TriggerServerEvent('qb-bankrobbery:server:removeBankCard', '02')
                         if copsCalled or not Config.BigBanks["pacific"]["alarm"] then return end
-                        local camId = Config.BigBanks["pacific"]["camId"] exports['ps-dispatch']:PacificBankRobbery(camId)                        copsCalled = true
+                        local camId = Config.BigBanks["pacific"]["camId"] exports['ps-dispatch']:PacificBankRobbery(camId) copsCalled = true
                     end, function() -- Cancel
                         StopAnimTask(ped, "anim@gangops@facility@servers@", "hotwire", 1.0)
                         QBCore.Functions.Notify(Lang:t("error.cancel_message"), "error")
@@ -85,6 +85,7 @@ RegisterNetEvent('electronickit:UseElectronickit', function()
                             disableCombat = true,
                         }, {}, {}, {}, function() -- Done
                             TriggerServerEvent('qb-bankrobbery:server:removeElectronicKit')
+                            TriggerServerEvent('ak4y-battlepass:taskCountAdd:premium', 3, 1)
                             StopAnimTask(ped, "anim@gangops@facility@servers@", "hotwire", 1.0)
                             TriggerEvent("mhacking:show")
                             TriggerEvent("mhacking:start", math.random(5, 9), math.random(10, 15), OnHackPacificDone)
