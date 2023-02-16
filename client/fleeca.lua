@@ -302,6 +302,7 @@ RegisterNetEvent('qb-bankrobbery:client:setBankState', function(bankId)
     else
         Config.SmallBanks[bankId]["isOpened"] = true
         OpenBankDoor(bankId)
+        TriggerServerEvent('ak4y-battlepass:taskCountAdd:standart', 9, 1)
     end
 end)
 
